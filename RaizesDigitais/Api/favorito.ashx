@@ -1,0 +1,1 @@
+<%@ WebHandler Language="C#" CodeBehind="favorito.ashx.cs" Class="RaizesDigitais.Api.favorito" %>

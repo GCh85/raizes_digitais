@@ -1,0 +1,1 @@
+<%@ WebHandler Language="C#" CodeBehind="avaliar.ashx.cs" Class="RaizesDigitais.Api.avaliar" %>

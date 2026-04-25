@@ -1,0 +1,1 @@
+<%@ WebHandler Language="C#" CodeBehind="login_cliente.ashx.cs" Class="RaizesDigitais.Api.login_cliente" %>

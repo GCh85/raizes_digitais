@@ -1,0 +1,85 @@
+﻿<%@ Page Title="Entrar | Quinta da Azenha" Language="C#" MasterPageFile="~/MasterSite.Master" AutoEventWireup="true" CodeBehind="conta_login.aspx.cs" Inherits="RaizesDigitais.Pages.conta_login" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div class="text-center py-5" style="margin-top: 56px; background-color: var(--cor-texto); border-bottom: 2px solid var(--cor-destaque);">
+        <div class="container">
+            <h1 class="fw-normal text-white">A Minha Conta</h1>
+            <p class="fst-italic" style="color: var(--cor-destaque);">Aceda ao histórico das suas reservas</p>
+        </div>
+    </div>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+
+                    <span class="label-secao">Área Pessoal</span>
+                    <h2 class="mb-0">Entrar</h2>
+                    <div class="linha-verde-esq"></div>
+
+                    <asp:Label ID="lbl_erro" runat="server" CssClass="lbl-erro d-block mb-3" Visible="false" />
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small text-uppercase" style="letter-spacing:0.05em;">Email *</label>
+                        <asp:TextBox ID="tb_email" runat="server" CssClass="form-control" TextMode="Email" />
+                        <asp:RequiredFieldValidator
+                            ID="rfv_email" runat="server"
+                            ControlToValidate="tb_email"
+                            ErrorMessage="Introduza o seu email."
+                            CssClass="text-danger small"
+                            Display="Dynamic" />
+                        <asp:RegularExpressionValidator
+                            ID="rev_email" runat="server"
+                            ControlToValidate="tb_email"
+                            ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                            ErrorMessage="Formato de email inválido."
+                            CssClass="text-danger small"
+                            Display="Dynamic" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small text-uppercase" style="letter-spacing:0.05em;">Password *</label>
+                        <asp:TextBox ID="tb_pw" runat="server" CssClass="form-control" TextMode="Password" />
+                        <asp:RequiredFieldValidator
+                            ID="rfv_pw" runat="server"
+                            ControlToValidate="tb_pw"
+                            ErrorMessage="Introduza a password."
+                            CssClass="text-danger small"
+                            Display="Dynamic" />
+                    </div>
+
+                    <asp:Button ID="btn_entrar" runat="server" Text="Entrar"
+                        CssClass="btn-quinta w-100 py-2"
+                        OnClick="btn_entrar_Click" />
+
+                    <p class="text-center text-muted small mt-2">
+                        <a href="conta_recuperar_password.aspx" style="color: var(--cor-primaria);">Esqueceu a password?</a>
+                    </p>
+
+                    <div class="d-flex align-items-center my-3">
+                        <hr style="flex:1; border-color: var(--cor-neutro);" />
+                        <span class="mx-3 small text-muted">ou</span>
+                        <hr style="flex:1; border-color: var(--cor-neutro);" />
+                    </div>
+
+                    <asp:Button ID="btn_google" runat="server"
+                        Text="Continuar com Google"
+                        CssClass="w-100 py-2"
+                        OnClick="btn_google_Click"
+                        CausesValidation="false"
+                        style="background:#fff; border: 1px solid var(--cor-neutro); color: var(--cor-texto); font-size:0.85rem; font-weight:500; letter-spacing:0.05em; border-radius:2px; cursor:pointer;" />
+
+                    <p class="text-center text-muted small mt-4">
+                        Não tem conta? Ao fazer uma reserva a sua conta é criada automaticamente.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+</asp:Content>

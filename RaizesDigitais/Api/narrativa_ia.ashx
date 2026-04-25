@@ -1,0 +1,1 @@
+<%@ WebHandler Language="C#" CodeBehind="narrativa_ia.ashx.cs" Class="RaizesDigitais.Api.narrativa_ia" %>

@@ -1,0 +1,1 @@
+<%@ WebHandler Language="C#" CodeBehind="qr_pontos.ashx.cs" Class="RaizesDigitais.Api.qr_pontos" %>

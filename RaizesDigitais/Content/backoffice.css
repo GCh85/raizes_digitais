@@ -1,0 +1,175 @@
+/* backoffice.css — Quinta da Azenha
+   Customizações do AdminLTE para o backoffice da quinta
+   Referenciado em: MasterBackoffice.Master */
+
+/* Cores da Quinta  na sidebar */
+.main-sidebar {
+    background-color: #1a2e1a !important;
+}
+
+.brand-link {
+    background-color: #2F3E1E !important;
+    border-bottom: 1px solid #4A7C2F !important;
+}
+
+    .brand-link:hover {
+        background-color: #243018 !important;
+    }
+
+/* Nome do user no painel lateral  */
+.user-panel .info a {
+    color: #c8d8b8 !important;
+}
+
+/* Links activos na sidebar */
+.nav-sidebar .nav-link.active {
+    background-color: #4A7C2F !important;
+}
+
+.nav-sidebar .nav-link:hover {
+    background-color: #2F3E1E !important;
+}
+
+/* Footer */
+.main-footer {
+    font-size: 0.85rem;
+    clear: both;
+}
+
+/* Título da página de conteúdo */
+.content-header h1 {
+    font-size: 1.4rem;
+    color: #2F3E1E;
+}
+
+html, body, #form2, .wrapper {
+    min-height: 100%;
+}
+
+.content-wrapper {
+    background-color: #f4f6f9 !important;
+    min-height: calc(100vh - 57px) !important;
+}
+
+.content {
+    padding-bottom: 1rem;
+}
+
+/* Painel inline de exportação de emails */
+#pnl_emails_export {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+#tb_emails_export {
+    resize: vertical;
+    min-height: 80px;
+    max-height: 150px;
+}
+
+/* Ordenação de tabelas  */
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+    content: '';
+    margin-left: 6px;
+    font-size: 10px;
+    display: inline-block;
+}
+
+table.dataTable thead th.sorting:after {
+    content: '↕';
+    opacity: 0.4;
+}
+
+table.dataTable thead th.sorting_asc:after {
+    content: '▲';
+    opacity: 1;
+    color: #007bff;
+}
+
+table.dataTable thead th.sorting_desc:after {
+    content: '▼';
+    opacity: 1;
+    color: #007bff;
+}
+
+/* Remover elementos extra de sort-indicator se houver */
+.sort-indicator {
+    display: none !important;
+}
+
+.card .table {
+    margin-bottom: 0;
+}
+
+.card .table thead th,
+.card .table thead th a,
+.dataTables_wrapper table thead th,
+.dataTables_wrapper table thead th a {
+    color: #212529 !important;
+    font-weight: 600;
+}
+
+.card .table thead th a {
+    display: inline-block;
+    width: 100%;
+}
+
+.card-header + .card-body.p-0 {
+    border-top: 0;
+}
+
+.card-body.p-0 .dataTables_wrapper {
+    border-top: 0;
+}
+
+.card-body.p-0 .dataTables_wrapper .table thead th {
+    border-top: 0;
+}
+
+.error-message:empty {
+    display: none !important;
+}
+
+.error-message {
+    pointer-events: none;
+}
+
+.form-actions-backoffice {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.form-actions-backoffice .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.badge-destaque {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* Cabeçalhos de tabela */
+.card .table tbody th a,
+.card .table tbody th a:hover,
+.card .table tbody th a:visited {
+    color: #212529 !important;
+    text-decoration: none !important;
+}
+
+.btn-outline-warning {
+    color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    background-color: transparent !important;
+}
+
+    .btn-outline-warning:hover {
+        background-color: #ffc107 !important;
+        color: #212529 !important;
+    }

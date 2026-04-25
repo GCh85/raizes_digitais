@@ -1,0 +1,382 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterBackoffice.master.cs" Inherits="RaizesDigitais.MasterBackoffice" %>
+
+<!DOCTYPE html>
+
+<html lang="pt">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Quinta da Azenha - Backoffice</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/dist/css/adminlte.min.css") %>" />
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css") %>" />
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/toastr/toastr.min.css") %>" />
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/select2/css/select2.min.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css") %>" />
+
+
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/daterangepicker/daterangepicker.css") %>" />
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css") %>" />
+
+    <link rel="stylesheet" href="<%= ResolveUrl("~/Content/backoffice.css") %>" />
+
+    <!-- Espaço para CSS adicional por página -->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" />
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <form id="form2" runat="server">
+        <div class="wrapper">
+
+    <!-- ═══════════════════════════════════════════
+         NAVBAR TOPO
+         ═══════════════════════════════════════════ -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+        <!-- Esquerda: botão de colapso da sidebar -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Direita: utilizador autenticado + sair -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <span class="nav-link text-muted">
+                    <i class="fas fa-user-circle mr-1"></i>
+                    <!-- Nome e perfil do utilizador vêm do code-behind via Label -->
+                    <asp:Label ID="lbl_utilizador_header" runat="server" Text="" />
+                </span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-danger" href="<%= ResolveUrl("~/logout.aspx") %>" title="Terminar sessão">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="d-none d-sm-inline ml-1">Sair</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- ═══════════════════════════════════════════
+         SIDEBAR
+         ═══════════════════════════════════════════ -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+        <!-- Logo / Nome da quinta -->
+        <a href="<%= ResolveUrl("~/Backoffice/dashboard.aspx") %>" class="brand-link">
+            <i class="fas fa-leaf brand-image elevation-3 ml-3 mt-1" style="font-size:1.6rem; color:#c8b89a;"></i>
+            <span class="brand-text font-weight-bold ml-2" style="color:#f0ece4; font-size:0.95rem; letter-spacing:0.5px;">
+                QUINTA DA AZENHA
+            </span>
+        </a>
+
+        <div class="sidebar">
+
+            <!-- Painel do utilizador autenticado -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <i class="fas fa-user-circle fa-2x ml-1" style="color:#c8b89a;"></i>
+                </div>
+                <div class="info ml-2">
+                    <!-- Nome preenchido pelo code-behind -->
+                    <asp:Label ID="lbl_utilizador_sidebar" runat="server"
+                               CssClass="d-block" style="color:#c8b89a; font-size:0.9rem;" />
+                    <!-- Perfil preenchido pelo code-behind -->
+                    <asp:Label ID="lbl_perfil_sidebar" runat="server"
+                               CssClass="d-block" style="color:#7a5c3a; font-size:0.78rem;" />
+                </div>
+            </div>
+
+            <!-- Menu da sidebar -->
+            <nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+        <li class="nav-item">
+            <a href="<%= ResolveUrl("~/Backoffice/dashboard.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<%= ResolveUrl("~/Backoffice/gerir_vinhos.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-wine-bottle"></i>
+                <p>Vinhos</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<%= ResolveUrl("~/Backoffice/gerir_experiencias.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-leaf"></i>
+                <p>Experiências</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<%= ResolveUrl("~/Backoffice/gerir_reservas.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-calendar-check"></i>
+                <p>Reservas</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<%= ResolveUrl("~/Backoffice/gerir_clientes.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-address-card"></i>
+                <p>Clientes (CRM)</p>
+            </a>
+        </li>
+
+        <li id="li_menu_cupoes" runat="server" class="nav-item">
+            <a href="<%= ResolveUrl("~/Backoffice/gerir_cupoes.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-ticket-alt"></i>
+                <p>Cupões</p>
+            </a>
+        </li>
+
+        <li id="li_menu_ofertas_b2b" runat="server" class="nav-item">
+            <a href="<%= ResolveUrl("~/Backoffice/gerir_ofertas_b2b.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-briefcase"></i>
+                <p>Ofertas B2B</p>
+            </a>
+        </li>
+
+        <li id="li_menu_testemunhos" runat="server" class="nav-item">
+            <a href="<%= ResolveUrl("~/Backoffice/gerir_testemunhos.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-comments"></i>
+                <p>Testemunhos</p>
+            </a>
+        </li>
+
+        <li id="header_sistema" runat="server" class="nav-header" style="color:#c8d8b8;">SISTEMA</li>
+
+        <li id="li_menu_utilizadores" runat="server" class="nav-item">
+            <a href="<%= ResolveUrl("~/Backoffice/gerir_utilizadores.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-users-cog"></i>
+                <p>Gestão de Staff</p>
+            </a>
+        </li>
+
+        <li class="nav-header" style="color:#c8d8b8;">A MINHA CONTA</li>
+
+        <li class="nav-item">
+            <a href="<%= ResolveUrl("~/alterar_password.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-key"></i>
+                <p>Alterar Password</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<%= ResolveUrl("~/logout.aspx") %>" class="nav-link">
+                <i class="nav-icon fas fa-sign-out-alt"></i>
+                <p>Terminar Sessão</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+    <!-- /.main-sidebar -->
+
+    <!-- ═══════════════════════════════════════════
+         CONTEÚDO PRINCIPAL
+         Cada página define o seu bloco aqui dentro
+         ═══════════════════════════════════════════ -->
+    <div class="content-wrapper">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server" />
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer class="main-footer">
+        <strong>&copy; 2026 Quinta da Azenha</strong> - Bucelas
+        <div class="float-right d-none d-sm-inline-block">
+            <asp:Label ID="lbl_perfil_footer" runat="server" style="color:#888;" />
+        </div>
+    </footer>
+
+    <!-- Control Sidebar (obrigatório para o AdminLTE não dar erro JS) -->
+    <aside class="control-sidebar control-sidebar-dark"></aside>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS OBRIGATÓRIOS AdminLTE
+     Caminhos relativos à raiz do projecto RD
+     ═══════════════════════════════════════════ -->
+<!-- jQuery -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/jquery/jquery.min.js") %>"></script>
+<!-- Bootstrap -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js") %>"></script>
+<!-- AdminLTE -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/dist/js/adminlte.js") %>"></script>
+
+<!-- DataTables JS -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/datatables/jquery.dataTables.min.js") %>"></script>
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js") %>"></script>
+
+<!-- Toastr JS -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/toastr/toastr.min.js") %>"></script>
+
+<!-- Configuração padrão do Toastr -->
+<script>
+    $(document).ready(function() {
+        toastr.options = {
+            "positionClass": "toast-top-right",
+            "closeButton": true,
+            "progressBar": true,
+            "timeOut": "5000",
+            "extendedTimeOut": "2000"
+        };
+    });
+</script>
+
+<!-- Select2 JS -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/select2/js/select2.full.min.js") %>"></script>
+<!-- Idioma PT (se disponível) -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/select2/js/i18n/pt.js") %>"></script>
+
+<!-- Inicialização global do Select2 -->
+<script>
+    $(document).ready(function() {
+        $('.select2').select2({
+            width: '100%',
+            theme: 'bootstrap4',
+            language: 'pt'
+        });
+    });
+</script>
+
+
+<!-- Bootstrap Switch CSS -->	<link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css") %>" />	<!-- Bootstrap Switch JS -->	<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/bootstrap-switch/js/bootstrap-switch.min.js") %>"></script>
+<!-- Bootstrap Switch -->
+<script>
+    $(document).ready(function() {
+        $("input[data-bootstrap-switch='true']").bootstrapSwitch({
+            size: 'small',
+            onColor: 'success',
+            offColor: 'secondary'
+        });
+
+        // Sincronizar estado para ASP.NET postback
+        $("input[data-bootstrap-switch='true']").on('switchChange.bootstrapSwitch', function(event, state) {
+            $(this).prop('checked', state);
+        });
+    });
+</script>
+
+<!-- jQuery Validation -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/jquery-validation/jquery.validate.min.js") %>"></script>
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/jquery-validation/additional-methods.min.js") %>"></script>
+
+<!-- Date Range Picker CSS -->
+<link rel="stylesheet" href="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/daterangepicker/daterangepicker.css") %>" />
+
+<!-- Moment.js (required for DateRangePicker) -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/moment/moment.min.js") %>"></script>
+<!-- Date Range Picker JS -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/daterangepicker/daterangepicker.js") %>"></script>
+
+<!-- SweetAlert2 -->
+<script src="<%= ResolveUrl("~/AdminLTE-3.2.0/plugins/sweetalert2/sweetalert2.min.js") %>"></script>
+
+<!-- Função helper para confirmações -->
+<script>
+    function confirmSwal(btn, title, text, confirmButtonText) {
+        Swal.fire({
+            title: title || 'Tem a certeza?',
+            text: text || 'Esta ação não pode ser revertida.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: confirmButtonText || 'Sim',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var href = btn.getAttribute('href') || '';
+                if (href.indexOf('__doPostBack') >= 0) {
+                    eval(href.replace('javascript:', ''));
+                } else if (btn.name) {
+                    __doPostBack(btn.name, '');
+                }
+            }
+        });
+        return false; // previne postback imediato
+    }
+
+    function confirmAction(title, text, url) {
+        Swal.fire({
+            title: title,
+            text: text,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sim',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = url;
+            }
+        });
+    }
+</script>
+
+<!-- Script para marcar menu ativo -->
+<script>
+    $(document).ready(function () {
+        // Obter o caminho da página atual
+        var currentPath = window.location.pathname.toLowerCase();
+
+        // Remover a barra final se existir
+        if (currentPath.endsWith('/')) {
+            currentPath = currentPath.slice(0, -1);
+        }
+
+        // Iterar por todos os links do menu
+        $('.nav-sidebar .nav-link').each(function () {
+            var linkPath = $(this).attr('href');
+
+            if (linkPath) {
+                // Normalizar o caminho do link
+                linkPath = linkPath.toLowerCase();
+
+                // Verificar se o caminho atual termina com o caminho do link
+                if (currentPath.endsWith(linkPath) ||
+                    currentPath.indexOf(linkPath.split('?')[0]) !== -1) {
+                    $(this).addClass('active');
+                }
+            }
+        });
+    });
+</script>
+
+<!-- Espaço para scripts adicionais por página -->
+<asp:ContentPlaceHolder ID="scripts" runat="server" />
+
+    </form>
+</body>
+</html>

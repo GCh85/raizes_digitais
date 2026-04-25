@@ -1,0 +1,179 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterSite.master.cs" Inherits="RaizesDigitais.MasterSite" %>
+
+<!DOCTYPE html>
+
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap 5 + Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Fontes da quinta (Playfair Display + Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <!-- CSS do site público -->
+    <link rel="stylesheet" href="~/Content/raizes.css?v=20260415b" />
+
+    <title>Quinta da Azenha</title>
+
+    <!-- Espaço para título e CSS adicional por página -->
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7ZCL749YY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K7ZCL749YY');
+    </script>
+
+</head>
+
+<body>
+<form id="form1" runat="server">
+
+    <!-- ═══════════════════════════════════════════════════════
+         NAVBAR
+         navbar-quinta: classe do raizes.css (fundo claro, verde)
+         fixed-top: sempre visível ao fazer scroll
+         Ícone pessoa: condicional por Session["cliente_id"]
+         ═══════════════════════════════════════════════════════ -->
+    <nav class="navbar navbar-expand-md navbar-quinta fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="~/Pages/index.aspx" runat="server">Quinta da Azenha</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navMenu"
+                    aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-md-center gap-md-1">
+
+                    <li class="nav-item">
+                        <a class='nav-link <%= Request.Url.AbsolutePath.ToLower().Contains("index") ? "active" : "" %>'
+                           href="~/Pages/index.aspx" runat="server">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link <%= Request.Url.AbsolutePath.ToLower().Contains("vinhos") ? "active" : "" %>'
+                           href="~/Pages/vinhos.aspx" runat="server">Vinhos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link <%= Request.Url.AbsolutePath.ToLower().Contains("experiencias") ? "active" : "" %>'
+                           href="~/Pages/experiencias.aspx" runat="server">Experiências</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link <%= Request.Url.AbsolutePath.ToLower().Contains("reserva") ? "active" : "" %>'
+                           href="~/Pages/reserva.aspx" runat="server">Reservar</a>
+                    </li>
+
+                    <!-- ─────────────────────────────────────────
+                         Ícone de pessoa — dinâmico por sessão
+                         Logado   → conta.aspx (área pessoal)
+                         Não logado → conta_login.aspx
+                         ───────────────────────────────────────── -->
+                    <li class="nav-item ms-md-2">
+                        <% if (Session["cliente_id"] != null) { %>
+                            <a class="nav-link" href="~/Pages/conta.aspx" runat="server"
+                               style="color: var(--cor-primaria); font-size: 1.3rem;"
+                               title="A minha conta">
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+                        <% } else { %>
+                            <a class="nav-link" href="~/Pages/conta_login.aspx" runat="server"
+               	               style="color: var(--cor-primaria); font-size: 1.3rem;"
+                               title="Entrar">
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+                        <% } %>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         CONTEÚDO — cada página define o seu bloco aqui
+         ═══════════════════════════════════════════════════════ -->
+    <main>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+    </main>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         FOOTER — 3 colunas: marca + navegação + contacto
+         ═══════════════════════════════════════════════════════ -->
+    <footer class="py-4 border-top" style="background-color: var(--cor-texto);">
+        <div class="container">
+            <div class="row g-4 mb-3">
+
+                <!-- Coluna 1: nome, descrição, redes sociais -->
+                <div class="col-md-5">
+                    <h5 class="text-white fw-bold mb-2">Quinta da Azenha</h5>
+                    <p class="small" style="color: rgba(255,255,255,0.5);">
+                        Produtores de vinho Arinto DOC Bucelas.<br />
+                        Bucelas · Lisboa · Portugal
+                    </p>
+                    <div class="d-flex gap-3 mt-2">
+                        <a href="#" style="color: rgba(255,255,255,0.5); font-size:1.2rem;"><i class="bi bi-facebook"></i></a>
+                        <a href="#" style="color: rgba(255,255,255,0.5); font-size:1.2rem;"><i class="bi bi-instagram"></i></a>
+                        <a href="#" style="color: rgba(255,255,255,0.5); font-size:1.2rem;"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: links de navegação -->
+                <div class="col-md-3">
+                    <h6 class="text-uppercase small mb-3" style="color: rgba(255,255,255,0.5); letter-spacing: 0.1em;">Navegar</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="~/Pages/index.aspx" runat="server" class="text-decoration-none small" style="color: rgba(255,255,255,0.5);">Início</a></li>
+                        <li><a href="~/Pages/vinhos.aspx" runat="server" class="text-decoration-none small" style="color: rgba(255,255,255,0.5);">Vinhos</a></li>
+                        <li><a href="~/Pages/experiencias.aspx" runat="server" class="text-decoration-none small" style="color: rgba(255,255,255,0.5);">Experiências</a></li>
+                        <li><a href="~/Pages/reserva.aspx" runat="server" class="text-decoration-none small" style="color: rgba(255,255,255,0.5);">Reservar</a></li>
+                        <li>
+                            <% if (Session["cliente_id"] != null) { %>
+                                <a href="~/Pages/conta.aspx" runat="server" class="text-decoration-none small" style="color: rgba(255,255,255,0.5);">A minha conta</a>
+                            <% } else { %>
+                                <a href="~/Pages/conta_login.aspx" runat="server" class="text-decoration-none small" style="color: rgba(255,255,255,0.5);">Entrar</a>
+                            <% } %>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: contacto -->
+                <div class="col-md-4">
+                    <h6 class="text-uppercase small mb-3" style="color: rgba(255,255,255,0.5); letter-spacing: 0.1em;">Contacto</h6>
+                    <p class="small mb-0" style="color: rgba(255,255,255,0.5);">info.quintadaazenha@gmail.com</p>
+                    <p class="small mb-0" style="color: rgba(255,255,255,0.5);">+351 219 000 000</p>
+                    <p class="small" style="color: rgba(255,255,255,0.5);">Ter–Dom: 10h–18h</p>
+                </div>
+
+            </div>
+
+            <div class="border-top pt-3 d-flex justify-content-between flex-wrap gap-2"
+                 style="border-color: rgba(255,255,255,0.1) !important;">
+                <small style="color: rgba(255,255,255,0.4);">
+                    &copy; <asp:Literal ID="lit_ano" runat="server" /> Quinta da Azenha · Bucelas · Portugal
+                </small>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Espaço para scripts adicionais por página -->
+    <asp:ContentPlaceHolder ID="scripts" runat="server" />
+
+</form>
+</body>
+</html>
