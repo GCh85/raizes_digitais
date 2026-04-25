@@ -70,7 +70,7 @@
 
 ### 🤖 Inteligência Artificial
 
-- **Narrativa Personalizada** — IA gera texto according ao nível de fidelização
+- **Narrativa Personalizada** — IA gera texto de acordo com o nível de fidelização
 - **OpenRouter API** — Integração com modelos de linguagem
 
 ---
@@ -115,7 +115,7 @@
                                 ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                       SQL SERVER EXPRESS                                    │
-│  ┌─────���─��───────┐   ┌───────────────┐   ┌───────────────┐           │
+│  ┌──────────────────────┐   ┌───────────────┐   ┌───────────────┐           │
 │  │   13 Tabelas         │   │  88 SPs       │   │     Views     │           │
 │  │                      │   │               │   │               │           │
 │  │ • clientes           │   │ • sp_login    │   │ • v_kpis      │           │
@@ -131,8 +131,8 @@
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                        APP ANDROID (KOTLIN)                                 │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
-│  │   Login     │  │  Catalog    │  │  QR Scan    │  │  Favoritos  │         │
-│  │             │  │   Wines     │  │             │  │             │         │
+│  │   Login     │  │  Catalogo   │  │  QR Scan    │  │  Favoritos  │         │
+│  │             │  │   Vinhos    │  │             │  │             │         │
 │  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘         │
 │                                                                             │
 │  │ HTTP/JSON                                                                │
