@@ -5,9 +5,9 @@
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-Express-CC2927?style=flat&logo=microsoftsqlserver)](https://www.microsoft.com/sql-server/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat&logo=bootstrap)](https://getbootstrap.com/)
 [![Kotlin](https://img.shields.io/badge/Kotlin-Android-7F52FF?style=flat&logo=kotlin)](https://kotlinlang.org/)
-[![License](https://img.shields.io/badge/License-Academic-blue?style=flat)](LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary-red?style=flat)](LICENSE)
 
-> **Projeto Final ATEC TPSI-CAS-0725**
+> **Projeto Final ATEC TPSI-CAS-0725 | Desenvolvido por GCh85**
 >
 > Sistema de gestão de enoturismo da Quinta da Azenha, propriedade vitivinícola familiar em Bucelas, produtora de vinho Arinto DOC. Caso real aprovado pelo professor António Pacheco (Termo de Abertura, Março 2026).
 
@@ -592,13 +592,19 @@ RaizesDigitais/
 
 ## 📄 Licença
 
-Projeto académico desenvolvido para **ATEC TPSI-CAS-0725** — Curso de Especialização Tecnológica em Técnicas e Programação de Sistemas de Informação.
+Propriedade de **GCh85**. Este projeto foi desenvolvido para fins académicos e de portefólio para a **ATEC TPSI-CAS-0725**. 
+
+O código é disponibilizado para visualização e avaliação técnica. É estritamente proibida a cópia, redistribuição ou uso comercial de qualquer parte da lógica de negócio ou arquitetura sem autorização expressa. Consulte o ficheiro [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+> **Nota de Segurança:** Por motivos de conformidade e proteção de propriedade intelectual, as chaves de API, segredos e credenciais de servidor foram omitidos ou substituídos por placeholders. O código completo para auditoria está disponível mediante solicitação.
 
 ---
 
 <div align="center">
 
-**Made with 🍇 for Quinta da Azenha**
+**Made with 🍇 by GCh85 for Quinta da Azenha**
 
 [![ASP.NET](https://img.shields.io/badge/ASP.NET-Web%20Forms-512BD4?style=flat&logo=dotnet)](https://dotnet.microsoft.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat&logo=bootstrap)](https://getbootstrap.com/)
