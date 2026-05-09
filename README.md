@@ -17,20 +17,20 @@
 
 ## Índice
 
-- [Funcionalidades](#-funcionalidades)
-- [Arquitetura](#-arquitetura)
-- [Stack-Tecnológico](#️-stack-tecnológico)
-- [Base de Dados](#-base-de-dados)
-- [Website Público](#-website-público)
-- [Backoffice](#-backoffice)
-- [App Android](#-app-android)
-- [Gamificação](#-gamificação)
-- [Inteligência Artificial](#-inteligência-artificial)
-- [Setup Local](#-setup-local)
-- [Desenvolvimento](#-desenvolvimento)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Contribuição](#-contribuição)
-- [Licença](#-licença)
+- [Funcionalidades](#funcionalidades)
+- [Arquitetura](#arquitetura)
+- [Stack-Tecnológico](#️stack-tecnológico)
+- [Base de Dados](#base-de-dados)
+- [Website Público](#website-público)
+- [Backoffice](#backoffice)
+- [App Android](#app-android)
+- [Gamificação](#gamificação)
+- [Inteligência Artificial](#inteligência-artificial)
+- [Setup Local](#setup-local)
+- [Desenvolvimento](#desenvolvimento)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
 ---
 
