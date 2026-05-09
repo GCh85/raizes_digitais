@@ -1,4 +1,4 @@
-# 🍇 Raizes Digitais
+# Raizes Digitais
 ## Plataforma de Enoturismo Digital da Quinta da Azenha
 
 ![Mockup de Apresentação](docs/screenshots/hero_mockup.png)
@@ -11,11 +11,11 @@
 
 > **Projeto Final ATEC TPSI-CAS-0725 | Desenvolvido por GCh85**
 >
-> Sistema de gestão de enoturismo da Quinta da Azenha, propriedade vitivinícola familiar em Bucelas, produtora de vinho Arinto DOC. Caso real aprovado pelo professor António Pacheco (Termo de Abertura, Março 2026).
+> Sistema de gestão de enoturismo da Quinta da Azenha, propriedade vitivinícola familiar em Bucelas, produtora de vinho Arinto DOC.
 
 ---
 
-## 📋 Índice
+## Índice
 
 - [Funcionalidades](#-funcionalidades)
 - [Arquitetura](#-arquitetura)
@@ -34,9 +34,9 @@
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
-### 🌐 Website Público
+### Website Público
 
 - **Catálogo de Experiências** - Prova de Vinhos, Visita à Vinha, Almoço Rural, Estadia
 - **Sistema de Reservas** - Escolha de data/pessoas, cálculo automático de preço
@@ -44,7 +44,7 @@
 - **Área Pessoal** - Histórico de reservas, favoritos, pontos de fidelização
 - **Email + PDF** - Confirmação automática com anexo iText 9
 
-### 🖥️ Backoffice
+### Backoffice
 
 - **Dashboard** - KPIs do dia, reservas, receita, alertas de stock
 - **Gestão de Reservas** - Criar, editar, alterar estado, cancelar (atribuição atómica de pontos)
@@ -54,7 +54,7 @@
 - **Programa de Fidelização** - Cupões automáticos On-Demand
 - **Moderação** - Aprovar testemunhos e notas de prova
 
-### 📱 App Android
+### App Android
 
 - **Login** - Autenticação SHA-256 sincronizada
 - **Catálogo de Vinhos** - Lista reativa (Jetpack Compose)
@@ -63,21 +63,21 @@
 - **Favoritos** - Sincronização Omnichannel
 - **Arquitetura** - MVVM + Clean Patterns + Coroutines
 
-### 🏆 Sistema de Gamificação
+### Sistema de Gamificação
 
 - **Pontuação por Ação** - Reserva confirmada, QR lido, avaliação
 - **Níveis de Fidelização** - Visitante -> Conhecedor -> Sommelier -> Embaixador
 - **Pontos Resgatáveis** - Troca por cupões de desconto
 - **Narrativa IA** - Adapta-se ao nível do cliente
 
-### 🤖 Inteligência Artificial
+### Inteligência Artificial
 
 - **Narrativa Personalizada** - IA gera texto de acordo com o nível de fidelização
 - **OpenRouter API** - Integração com modelos de linguagem
 
 ---
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -558,7 +558,7 @@ RaizesDigitais/
 
 ---
 
-## 📄 Licença
+## Licença
 
 Propriedade de **GCh85**. Este projeto foi desenvolvido para fins académicos e de portefólio para a **ATEC TPSI-CAS-0725**. 
 
