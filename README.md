@@ -1,82 +1,81 @@
-# Raizes Digitais
+# 🍇 Raizes Digitais
 ## Plataforma de Enoturismo Digital da Quinta da Azenha
-
-![Mockup de Apresentação](docs/screenshots/hero_mockup.png)
 
 [![ASP.NET](https://img.shields.io/badge/ASP.NET-Web%20Forms-512BD4?style=flat&logo=dotnet)](https://dotnet.microsoft.com/)
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-Express-CC2927?style=flat&logo=microsoftsqlserver)](https://www.microsoft.com/sql-server/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat&logo=bootstrap)](https://getbootstrap.com/)
 [![Kotlin](https://img.shields.io/badge/Kotlin-Android-7F52FF?style=flat&logo=kotlin)](https://kotlinlang.org/)
+[![License](https://img.shields.io/badge/License-Proprietary-red?style=flat)](LICENSE)
 
-> **Projeto Final | Gonçalo Chora | ATEC TPSI-CAS-0725**
+> **Projeto Final ATEC TPSI-CAS-0725 | Desenvolvido por GCh85**
 >
 > Sistema de gestão de enoturismo da Quinta da Azenha, propriedade vitivinícola familiar em Bucelas, produtora de vinho Arinto DOC. Caso real aprovado pelo professor António Pacheco (Termo de Abertura, Março 2026).
 
 ---
 
-## Índice
+## 📋 Índice
 
-- [Funcionalidades](#funcionalidades)
-- [Arquitetura](#arquitetura)
-- [Stack Tecnológico](#stack-tecnológico)
-- [Base de Dados](#base-de-dados)
-- [Website Público](#website-público)
-- [Backoffice](#backoffice)
-- [App Android](#app-android)
-- [Sistema de Gamificação](#sistema-de-gamificação)
-- [Inteligência Artificial](#inteligência-artificial)
-- [Setup Local](#setup-local)
-- [Desenvolvimento](#desenvolvimento)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-
----
-
-## Funcionalidades
-
-### Website Público
-
-- **Catálogo de Experiências** - Prova de Vinhos, Visita à Vinha, Almoço Rural, Estadia
-- **Sistema de Reservas** - Escolha de data/pessoas, cálculo automático de preço
-- **Autenticação** - Registo, login, 2FA, recuperação de password
-- **Área Pessoal** - Histórico de reservas, favoritos, pontos de fidelização
-- **Email + PDF** - Confirmação automática com anexo iText 9
-
-### Backoffice
-
-- **Dashboard** - KPIs do dia, reservas, receita, alertas de stock
-- **Gestão de Reservas** - Criar, editar, alterar estado, cancelar (atribuição atómica de pontos)
-- **CRM** - Ficha completa do cliente (alergias, preferências, histórico)
-- **Gestão de Vinhos** - Catálogo com stock, perfil sensorial
-- **Gestão de Experiências** - Criar, editar, disponibilidade
-- **Programa de Fidelização** - Cupões automáticos On-Demand
-- **Moderação** - Aprovar testemunhos e notas de prova
-
-### App Android
-
-- **Login** - Autenticação SHA-256 sincronizada
-- **Catálogo de Vinhos** - Lista reativa (Jetpack Compose)
-- **QR Scanner** - Gamificação física (ZXing)
-- **Avaliações** - Lógica de "Voto Único" (Anti-Farming)
-- **Favoritos** - Sincronização Omnichannel
-- **Arquitetura** - MVVM + Clean Patterns + Coroutines
-
-### Sistema de Gamificação
-
-- **Pontuação por Ação** - Reserva confirmada, QR lido, avaliação
-- **Níveis de Fidelização** - Visitante -> Conhecedor -> Sommelier -> Embaixador
-- **Pontos Resgatáveis** - Troca por cupões de desconto
-- **Narrativa IA** - Adapta-se ao nível do cliente
-
-### Inteligência Artificial
-
-- **Narrativa Personalizada** - IA gera texto de acordo com o nível de fidelização
-- **OpenRouter API** - Integração com modelos de linguagem
+- [Funcionalidades](#-funcionalidades)
+- [Arquitetura](#-arquitetura)
+- [Stack-Tecnológico](#️-stack-tecnológico)
+- [Base de Dados](#-base-de-dados)
+- [Website Público](#-website-público)
+- [Backoffice](#-backoffice)
+- [App Android](#-app-android)
+- [Gamificação](#-gamificação)
+- [Inteligência Artificial](#-inteligência-artificial)
+- [Setup Local](#-setup-local)
+- [Desenvolvimento](#-desenvolvimento)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Contribuição](#-contribuição)
+- [Licença](#-licença)
 
 ---
 
-## Arquitetura
+## ✨ Funcionalidades
+
+### 🌐 Website Público
+
+- **Catálogo de Experiências** — Prova de Vinhos, Visita à Vinha, Almoço Rural, Estadia
+- **Sistema de Reservas** — Escolha de data/pessoas, cálculo automático de preço
+- **Autenticação** — Registo, login, 2FA, recuperação de password
+- **Área Pessoal** — Histórico de reservas, favoritos, pontos de fidelização
+- **Email + PDF** — Confirmação automática com anexo iTextSharp
+
+### 🖥️ Backoffice
+
+- **Dashboard** — KPIs do dia, reservas, receita, alertas de stock
+- **Gestão de Reservas** — Criar, editar, alterar estado, cancelar
+- **CRM** — Ficha completa do cliente (alergias, preferências, histórico)
+- **Gestão de Vinhos** — Catálogo com stock, perfil sensorial
+- **Gestão de Experiências** — Criar, editar, disponibilidade
+- **Programa de Fidelização** — Pontos, níveis, cupões de desconto
+- **Avaliações** — Aprovar testemunhos de experiências
+
+### 📱 App Android
+
+- **Login** — Autenticação com o sistema do site
+- **Catálogo de Vinhos** — Lista com filtro por tipo
+- **QR Scanner** — Ler QR Codes físicos na quinta
+- **Avaliações** — 1-5 estrelas + comentário
+- **Favoritos** — Guardar vinhos da visita
+- **Reservas** — Criar reserva diretamente na app
+
+### 🏆 Sistema de Gamificação
+
+- **Pontuação por Ação** — Reserva confirmada, QR lido, avaliação
+- **Níveis de Fidelização** — Visitante → Conhecedor → Sommelier → Embaixador
+- **Pontos Resgatáveis** — Troca por cupões de desconto
+- **Narrativa IA** — Adapta-se ao nível do cliente
+
+### 🤖 Inteligência Artificial
+
+- **Narrativa Personalizada** — IA gera texto de acordo com o nível de fidelização
+- **OpenRouter API** — Integração com modelos de linguagem
+
+---
+
+## 🏗️ Arquitetura
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -92,7 +91,7 @@
 │  │                APRESENTAÇÃO (Code-Behind C#)                │            │
 │  │  • ASPX Pages + Master Pages                                │            │
 │  │  • Code-Behind (.aspx.cs)                                   │            │
-│  │  • Handlers (.ashx) -> JSON para API                        │            │
+│  │  • Handlers (.ashx) → JSON para API                         │            │
 │  └─────────────────────────────────────────────────────────────┘            │
 │                                    │                                        │
 │                                    ▼                                        │
@@ -100,7 +99,7 @@
 │  │              LÓGICA DE NEGÓCIO (App_Code)                   │            │
 │  │  • Seguranca.cs (SHA-256 + Salt)                            │            │
 │  │  • Email.cs (SmtpClient)                                    │            │
-│  │  • GeradorPDF.cs (iText 9)                                  │            │
+│  │  • GeradorPDF.cs (iTextSharp)                               │            │
 │  │  • Startup.cs                                               │            │
 │  └─────────────────────────────────────────────────────────────┘            │
 │                                    │                                        │
@@ -117,7 +116,7 @@
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                       SQL SERVER EXPRESS                                    │
 │  ┌──────────────────────┐   ┌───────────────┐   ┌───────────────┐           │
-│  │   13 Tabelas         │   │  106 SPs      │   │     Views     │           │
+│  │   13 Tabelas         │   │  88 SPs       │   │     Views     │           │
 │  │                      │   │               │   │               │           │
 │  │ • clientes           │   │ • sp_login    │   │ • v_kpis      │           │
 │  │ • reservas           │   │ • sp_inserir_ │   │               │           │
@@ -153,7 +152,7 @@
 
 ---
 
-## Stack Tecnológico
+## 🛠️ Stack Tecnológico
 
 | Tecnologia | Versão | Finalidade |
 |------------|--------|------------|
@@ -161,20 +160,22 @@
 | **C#** | 12 | Linguagem server-side |
 | **SQL Server Express** | 2022 | Base de dados relacional |
 | **ADO.NET** | - | Acesso a dados |
-| **Stored Procedures** | - | Lógica de dados (Zero Inline SQL) |
+| **Stored Procedures** | - | Lógica de dados |
 | **Bootstrap** | 5.3 | Framework CSS frontend |
 | **JavaScript/jQuery** | 3.x | Interatividade frontend |
-| **SHA-256 + Salt** | .NET native | Hash de passwords (v2 superior) |
-| **iText** | 9.x | Geração de PDF profissional |
-| **SmtpClient** | .NET native | Envio de emails com templates |
-| **Kotlin** | 1.9.x | Linguagem app Android Reativa |
-| **Jetpack Compose** | 1.5.x | UI Declarativa moderna na App |
-| **Retrofit / OkHttp** | - | Comunicação API REST |
-| **OpenRouter API** | - | Narrativa IA Contextual |
+| **SHA-256 + Salt** | .NET native | Hash de passwords |
+| **iTextSharp** | 7.x | Geração de PDF |
+| **SmtpClient** | .NET native | Envio de emails |
+| **Kotlin** | 1.9.x | linguagem app Android |
+| **Android SDK** | API 34 | Framework app mobile |
+| **Chart.js** | 4.x | Gráficos no dashboard |
+| **OSMDroid** | 6.x | Mapas na app |
+| **ZXing** | 3.x | Leitor QR Code |
+| **OpenRouter API** | - | Narrativa IA |
 
 ---
 
-## Base de Dados
+## 🗄️ Base de Dados
 
 ### 13 Tabelas
 
@@ -196,7 +197,7 @@
 
 ### Stored Procedures
 
-- **106 Stored Procedures** documentadas
+- **88 Stored Procedures** documentadas
 - Todas as operações de leitura/escrita passam por SP
 - Parâmetros OUTPUT com `.Size` obrigatório (regra das aulas)
 - Transações para operações críticas (reservas)
@@ -206,8 +207,8 @@
 ```
 reservas
 ├── num_reserva (UNIQUE: RD-AAAAMMDD-XXXX)
-├── id_cliente -> clientes
-├── id_disponibilidade -> disponibilidade
+├── id_cliente → clientes
+├── id_disponibilidade → disponibilidade
 ├── num_pessoas
 ├── preco_total (guardado no momento)
 ├── estado (Pendente/Confirmada/Cancelada/Concluída)
@@ -216,7 +217,7 @@ reservas
 
 ---
 
-## Website Público
+## 🌐 Website Público
 
 ### Páginas Principais
 
@@ -243,18 +244,18 @@ reservas
 
 ### Funcionalidades do Site
 
-- **Catálogo Dinâmico** - Experiências ativas com imagens
-- **Calendário de Disponibilidade** - Seleção de data/pessoas
-- **Processo de Reserva em 3 Passos** - Escolha -> Dados -> Confirmação
-- **Autenticação SHA-256 + Salt** - Nunca MD5
-- **2FA por Email** - Código de 6 dígitos
-- **Google OAuth** - Login com Google
-- **Email de Confirmação** - Com PDF em anexo (iText 9)
-- **Area Pessoal** - Histórico, favoritos, pontos
+- **Catálogo Dinâmico** — Experiências ativas com imagens
+- **Calendário de Disponibilidade** — Seleção de data/pessoas
+- **Processo de Reserva em 3 Passos** — Escolha → Dados → Confirmação
+- **Autenticação SHA-256 + Salt** — Nunca MD5 (explicar ao professor)
+- **2FA por Email** — Código de 6 dígitos
+- **Google OAuth** — Login com Google
+- **Email de Confirmação** — Com PDF em anexo (iTextSharp)
+- **Area Pessoal** — Histórico, favoritos, pontos
 
 ---
 
-## Backoffice
+## 🖥️ Backoffice
 
 ### Páginas (AdminLTE)
 
@@ -273,25 +274,25 @@ reservas
 
 ### Dashboard KPIs
 
-- **Reservas do dia** - Total e por estado
-- **Receita do mês** - Gráfico Chart.js
-- **Alertas de Stock** - Vinhos abaixo do mínimo
-- **Clientes VIP** - Top 5 por pontos
-- **Próximas chegadas** - Hoje e amanhã
+- **Reservas do dia** — Total e por estado
+- **Receita do mês** — Gráfico Chart.js
+- **Alertas de Stock** — Vinhos abaixo do mínimo
+- **Clientes VIP** — Top 5 por pontos
+- **Próximas chegadas** — Hoje e amanhã
 
 ### Funcionalidades do Backoffice
 
-- **CRUD Completo** - Todas as entidades
-- **Pesquisa e Filtro** - GridView com paginação
-- **Segmentação CRM** - VIP, Regular, Inativo, B2B
-- **Programa de Fidelização** - Atribuir pontos manualmente
-- **Cupões de Desconto** - Percentagem ou valor fixo
-- **Gestão de Stock** - Alertas visuais
-- **Auditoria** - Última alteração por quem
+- **CRUD Completo** — Todas as entidades
+- **Pesquisa e Filtro** — GridView com paginação
+- **Segmentação CRM** — VIP, Regular, Inativo, B2B
+- **Programa de Fidelização** — Atribuir pontos manualmente
+- **Cupões de Desconto** — Percentagem ou valor fijo
+- **Gestão de Stock** — Alertas visuais
+- **Auditoria** — Última alteração por quem
 
 ---
 
-## App Android
+## 📱 App Android
 
 ### 4 Ecrãs Principais
 
@@ -304,13 +305,13 @@ reservas
 
 ### Funcionalidades da App
 
-- Login - Integra com `sp_login_cliente`
-- Lista de Vinhos - GET via handler .ashx
-- Avaliação - 1-5 estrelas (ganha 10 pontos)
-- QR Reader - ZXing (ganha 30 pontos)
-- Favoritos - Sincroniza com site
-- Reservas - Consulta e redireccionamento para o website
-- Mapa - OSMDroid com localização da Quinta
+- **Login** — Integra com `sp_login_cliente`
+- **Lista de Vinhos** — GET via handler .ashx
+- **Avaliação** — 1-5 estrelas (ganha 10 pontos)
+- **QR Reader** — ZXing (ganha 30 pontos)
+- **Favoritos** — Sincroniza com site
+- **Reservas** — Criar reserva direta
+- **Mapa** — OSMDroid com localização
 
 ### Comunicação com Servidor
 
@@ -320,13 +321,12 @@ App Android
       │ HTTP/JSON
       ▼
 Handlers .ashx
-      ├─ api/listar_vinhos.ashx
-      ├─ api/login_cliente.ashx
-      ├─ api/detalhe_experiencia.ashx
-      ├─ api/avaliar.ashx
-      ├─ api/favorito.ashx
-      ├─ api/qr_pontos.ashx
-      └─ api/narrativa_ia.ashx
+      │
+      ├─ api/vinhos.ashx
+      ├─ api/login.ashx
+      ├─ api/reservas.ashx
+      ├─ api/avaliacoes.ashx
+      └─ api/favoritos.ashx
             │
             ▼
         Stored Procedures
@@ -337,7 +337,7 @@ Handlers .ashx
 
 ---
 
-## Gamificação
+## 🏆 Gamificação
 
 ### Pontuação por Ação
 
@@ -370,26 +370,26 @@ WHERE id_cliente = @id
 
 ---
 
-## Inteligência Artificial
+## 🤖 Inteligência Artificial
 
 ### Narrativa Personalizada
 
 A IA gera texto de acordo com o nível de fidelização do cliente:
 
-- **Visitante** -> Texto acolhedor, introdutório
-- **Conhecedor** -> Detalhado, com contexto
-- **Sommelier** -> Técnico, especializado
-- **Embaixador** -> Exclusivo, como o produtor
+- **Visitante** → Texto acolhedor, introdutório
+- **Conhecedor** → Detalhado, com contexto
+- **Sommelier** → Técnico, especializado
+- **Embaixador** → Exclusivo, como o produtor
 
 ### Integração
 
-- **OpenRouter API** - Modelos LLM
-- **Prompt personalizado** - Com base nos pontos
-- **Cache de resposta** - Evitar chamadas repetidas
+- **OpenRouter API** — Modelos LLM
+- **Prompt personalizado** — Com base nos pontos
+- **Cache de resposta** — Evitar chamadas repetidas
 
 ---
 
-## Setup Local
+## 🚀 Setup Local
 
 ### Pré-requisitos
 
@@ -407,8 +407,8 @@ CREATE DATABASE raizes_digitais_azenha
 GO
 
 -- 2. Executar scripts na ordem:
---    BD/script_raizes_digitais_azenha.sql
---    (13 tabelas + 105 SPs + dados de teste)
+--    Context_versao FINAL/BD_Raizes_Digitais_Completo.md
+--    (13 tabelas + 88 SPs + dados de teste)
 ```
 
 ### Configuração do Visual Studio
@@ -445,7 +445,7 @@ sp_inserir_utilizador
 
 ---
 
-## Desenvolvimento
+## 💻 Desenvolvimento
 
 ### Regras de Código
 
@@ -485,7 +485,7 @@ myConn.Close();
 ```
 
 
-## Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 RaizesDigitais/
@@ -493,54 +493,87 @@ RaizesDigitais/
 ├── RaizesDigitais.sln
 │
 └── RaizesDigitais/
-    ├── Web.config                # Connection string + SMTP
+    ├── Web.config                    # Connection string + SMTP
     ├── RaizesDigitais.csproj
     │
-    ├── Seguranca.cs              # Núcleo de Criptografia (SHA-256)
-    ├── Email.cs                  # Gestor de SMTP e Templates
-    ├── GeradorPDF.cs             # Integração com iText 9
-    ├── Startup.cs                # Configuração OWIN/Google
+    ├── App_Code/
+    │   ├── Seguranca.cs         # SHA-256 + Salt
+    │   ├── Email.cs            # SmtpClient
+    │   ├── GeradorPDF.cs      # iTextSharp
+    │   └── Startup.cs
     │
-    ├── MasterSite.Master         # Website público (Layout Base)
-    ├── MasterPublico.Master      # Master para páginas públicas
-    ├── MasterBackoffice.Master   # AdminLTE 3 (Gestão)
+    ├── MasterSite.Master         # Website público
+    ├── MasterPublico.Master
     │
-    ├── Content/                  # CSS (site.css, backoffice.css)
-    ├── Images/                   # Ativos visuais e fotos
-    ├── Template/                 # Template PDF de confirmação
+    ├── MasterBackoffice.Master      # AdminLTE
     │
-    ├── Pages/                    # Páginas do Website Público
-    │   ├── index.aspx            # Homepage
-    │   ├── experiencias.aspx     # Catálogo
-    │   ├── reserva.aspx          # Motor de Reservas (MultiView)
-    │   └── conta/                # Área Pessoal do Cliente
+    ├── Content/
+    │   ├── raizes.css        # Estilos do site
+    │   ├── site.css          # CSS base
+    │   └── backoffice.css    # AdminLTE
     │
-    ├── Backoffice/               # Painel Administrativo
-    │   ├── dashboard.aspx        # KPIs e Business Intelligence
-    │   └── gerir_*.aspx          # CRUDs e Moderação
+    ├── Images/
+    │   ├── *.png            # Imagens
+    │   └── vindima.jpg
     │
-    └── Api/                      # Endpoints REST para Mobile
-        ├── vinhos.ashx
-        ├── login_cliente.ashx
-        └── qr_pontos.ashx
+    ├── Template/
+    │   └── confirmacao_reserva_template.pdf
+    │
+    ├── Pages/                  # Website público
+    │   ├── index.aspx
+    │   ├── experiencias.aspx
+    │   ├── reserva.aspx
+    │   ├── confirmacao.aspx
+    │   ├── login.aspx
+    │   ├── registo.aspx
+    │   ├── recuperar_password.aspx
+    │   └── conta/           # Área pessoal
+    │       ├── area.aspx
+    │       ├── reservas.aspx
+    │       └── pontos.aspx
+    │
+    ├── Backoffice/             # Área administrativa
+    │   ├── dashboard.aspx
+    │   ├── gerir_reservas.aspx
+    │   ├── gerir_clientes.aspx
+    │   ├── gerir_vinhos.aspx
+    │   ├── gerir_experiencias.aspx
+    │   ├── gerir_cupoes.aspx
+    │   ├── gerir_utilizadores.aspx
+    │   ├── gerir_testemunhos.aspx
+    │   └── gerir_ofertas_b2b.aspx
+    │
+    ├── Handlers/             # API REST
+    │   ├── api/
+    │   │   ├── vinhos.ashx
+    │   │   ├── login.ashx
+    │   │   ├── reservas.ashx
+    │   │   ├── avaliacoes.ashx
+    │   │   └── favoritos.ashx
+    │
+    └── Properties/
+        └── AssemblyInfo.cs
 ```
 
 ---
 
-## Roadmap Final
 
-| Sprint | Foco | Estado |
-|--------|------|--------|
-| 1 | Infraestrutura & Base de Dados | ✅ Concluído |
-| 2 | Website Público & Reservas | ✅ Concluído |
-| 3 | Backoffice, CRM & Gamificação | ✅ Concluído |
-| 4 | App Android (Refactored: Compose) | ✅ Concluído |
-| 5 | Auditoria de Segurança & Sincronização | ✅ Concluído |
+
+## 🗓️ Roadmap
+
+| Sprint | Período | Foco | Estado |
+|--------|---------|------|--------|
+| 0 | 17 Fev - 3 Mar | Setup + proposta | ✅ Concluído |
+| 1 | 4 - 17 Mar | BD + Auth + estrutura | ✅ Concluído |
+| 2 | 18 - 31 Mar | Website + reservas | ✅ Concluído |
+| 3 | 1 - 14 Abr | Backoffice + CRM | ✅ Concluído |
+| 4 | 15 - 28 Abr | App Android + API | ✅ Concluído |
+| 5 | 29 Abr - 8 Mai | IA +Login/Gamificação | ⚠️ Em progresso |
 
 
 ---
 
-## Contribuição
+## 🤝 Contribuição
 
 1. Fork o repositório
 2. Criar branch (`git checkout -b feature/nova-funcionalidade`)
@@ -557,17 +590,21 @@ RaizesDigitais/
 
 ---
 
-## Licença
+## 📄 Licença
 
-Este projeto foi desenvolvido para fins académicos e de portefólio por Gonçalo Chora para a **ATEC TPSI-CAS-0725**. 
+Propriedade de **GCh85**. Este projeto foi desenvolvido para fins académicos e de portefólio para a **ATEC TPSI-CAS-0725**. 
 
-O código é disponibilizado para visualização e avaliação técnica. É estritamente proibida a cópia, redistribuição ou uso comercial de qualquer parte da lógica de negócio ou arquitetura sem autorização expressa.
+O código é disponibilizado para visualização e avaliação técnica. É estritamente proibida a cópia, redistribuição ou uso comercial de qualquer parte da lógica de negócio ou arquitetura sem autorização expressa. Consulte o ficheiro [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+> **Nota de Segurança:** Por motivos de conformidade e proteção de propriedade intelectual, as chaves de API, segredos e credenciais de servidor foram omitidos ou substituídos por placeholders. O código completo para auditoria está disponível mediante solicitação.
 
 ---
 
 <div align="center">
 
-**Made with 🍇 for Quinta da Azenha**
+**Made with 🍇 by GCh85 for Quinta da Azenha**
 
 [![ASP.NET](https://img.shields.io/badge/ASP.NET-Web%20Forms-512BD4?style=flat&logo=dotnet)](https://dotnet.microsoft.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat&logo=bootstrap)](https://getbootstrap.com/)
